@@ -11,6 +11,7 @@ import ContextMenu from "./ContextMenu";
 import { useStateProvider } from "../context/StateContext";
 import { reducerCases } from "../context/constants";
 
+
 function Navbar() {
   const [cookies] = useCookies();
   const router = useRouter();
@@ -50,7 +51,6 @@ function Navbar() {
     { linkName: "Fiverr Business", handler: "#", type: "link" },
     { linkName: "Explore", handler: "#", type: "link" },
     { linkName: "English", handler: "#", type: "link" },
-    { linkName: "Become a Seller", handler: "#", type: "link" },
     { linkName: "Sign in", handler: handleLogin, type: "button" },
     { linkName: "Join", handler: handleSignup, type: "button2" },
   ];
@@ -92,10 +92,9 @@ function Navbar() {
             GET_USER_INFO,
             {},
             {
-              withCredentials: true,
               headers: {
-                Authorization: `Bearer ${cookies.jwt}`,
-              },
+                Authorization: `Bearer ${cookies.jwt}`
+              }
             }
           );
 
@@ -160,7 +159,6 @@ function Navbar() {
       },
     },
   ];
-
   return (
     <>
       {isLoaded && (

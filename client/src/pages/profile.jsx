@@ -13,6 +13,7 @@ import React, { useEffect, useState } from "react";
 
 function Profile() {
   const router = useRouter();
+  const [cookies] = useCookies();
   const [{ userInfo }, dispatch] = useStateProvider();
   const [isLoaded, setIsLoaded] = useState(false);
   const [imageHover, setImageHover] = useState(false);
@@ -26,6 +27,7 @@ function Profile() {
 
   useEffect(() => {
     const handleData = { ...data };
+    console.log("handle data", handleData);
     if (userInfo) {
       if (userInfo?.username) handleData.userName = userInfo?.username;
       if (userInfo?.description) handleData.description = userInfo?.description;
@@ -66,10 +68,14 @@ function Profile() {
       const response = await axios.post(
         SET_USER_INFO,
         { ...data },
-        { withCredentials: true }
+        {
+          headers: {
+            Authorization: `Bearer ${cookies.jwt}`,
+          },
+        }
       );
       if (response.data.userNameError) {
-        setErrorMessage("Enter a Unique Username");
+        setErrorMessage("This username is already taken:☹ Please choose another");
       } else {
         let imageName = "";
         if (image) {
@@ -78,9 +84,8 @@ function Profile() {
           const {
             data: { img },
           } = await axios.post(SET_USER_IMAGE, formData, {
-            withCredentials: true,
             headers: {
-              "Content-Type": "multipart/form-data",
+              Authorization: `Bearer ${cookies.jwt}`,
             },
           });
           imageName = img;
