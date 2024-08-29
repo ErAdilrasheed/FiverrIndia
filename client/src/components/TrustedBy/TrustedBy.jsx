@@ -5,11 +5,11 @@ const TrustedBy = () => {
     <div className='trustedBy'>
       <div className="container">
         <span>Trusted by:</span>
-        <img src="https://res.cloudinary.com/dr5kn8993/image/upload/v1710530707/My%20Images/hcl.png" alt="" />
-        <img src="https://res.cloudinary.com/dr5kn8993/image/upload/v1710530974/My%20Images/infosys.png" alt="" />
-        <img src="https://res.cloudinary.com/dr5kn8993/image/upload/v1710531174/My%20Images/tech.png" alt="" />
-        <img src="https://res.cloudinary.com/dr5kn8993/image/upload/v1710531375/My%20Images/tcs.png" alt="" />
-        <img src="https://res.cloudinary.com/dr5kn8993/image/upload/v1710531539/My%20Images/wipro.png" alt="" />
+        <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/meta.12b5e5c.png" alt="" />
+        <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/google2x.4fa6c20.png" alt="" />
+        <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/netflix2x.887e47e.png" alt="" />
+        <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/pandg2x.6dc32e4.png" alt="" />
+        <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/paypal2x.22728be.png" alt="" />
       </div>
     </div>
   )

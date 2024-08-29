@@ -5,6 +5,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const connect = require('./configs/db');
 
+
 // Other Route files
 const { userRoute, conversationRoute, gigRoute, messageRoute, orderRoute, reviewRoute, authRoute } = require('./routes');
 
@@ -17,7 +18,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(compression());
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://www.fiverrindia.tech',
     credentials: true
 }));
 
@@ -42,10 +43,10 @@ app.get('/ip', (request, response) => {
     return response.send({ ip: ips[0] });
 })
 
-app.listen(8800, async () => {
+app.listen(8080, async () => {
     try {
         await connect();
-        console.log("Backend server is running!");
+        console.log(`Listening at http://localhost:8080`);
     }
     catch ({ message }) {
         console.log(message);

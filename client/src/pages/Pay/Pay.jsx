@@ -6,7 +6,7 @@ import { axiosFetch } from '../../utils';
 import { CheckoutForm } from '../../components';
 import './Pay.scss';
 
-const stripePromise = loadStripe("pk_test_xeqIPdYS2PpKbHmKG4gJqpde");
+const stripePromise = loadStripe("pk_test_51Pr2Ed06OtPAi7rBF4tUMsw31cb7863QALRqR5k0KZrqN5CexL6agO244UxdnljCcdtgM1C3VvUwnffbcOviXKcR00Re3IdmBQ");
 
 const Pay = () => {
   const { _id } = useParams();
@@ -34,7 +34,7 @@ const Pay = () => {
     appearance,
   };
 
-  return (
+ return (
     <div className='pay'>
       <h2>Pay Securely with Stripe</h2>
       {clientSecret && (

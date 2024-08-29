@@ -11,46 +11,32 @@ const authRegister = async (request, response) => {
     const list = request.headers['x-forwarded-for'] || request.socket.remoteAddress;
     const ips = list.split(',');
 
-    let country = 'India'; 
-
     try {
-        const getCountry = (ip) => {
-            return new Promise((resolve, reject) => {
-                satelize.satelize({ ip }, (error, payload) => {
-                    if (error) return reject(error);
-                    resolve(payload?.country?.en || 'India');
-                });
-            });
-        };
-
-        country = await getCountry(ips[0]);
-
-        const hash = await bcrypt.hash(password, saltRounds);
-
+        const hash = bcrypt.hashSync(password, saltRounds);
+        const { country } = satelize.satelize({ ip: ips[0] }, (error, payload) => payload);
+        
         const user = new User({
             username,
             email,
             password: hash,
             image,
-            country,
+            country: country.en,
             description,
             isSeller,
             phone
         });
-
         await user.save();
 
         return response.status(201).send({
             error: false,
             message: 'New user created!'
         });
-    } catch (error) {
-        console.error('Registration error:', error); 
-
-        if (error.message.includes('E11000')) {
+    }
+    catch({message}) {
+        if(message.includes('E11000')) {
             return response.status(400).send({
                 error: true,
-                message: 'Choose a unique username or email!'
+                message: 'Choose a unique username!'
             });
         }
 
@@ -83,7 +69,7 @@ const authLogin = async (request, response) => {
                 httpOnly: true,
                 sameSite: NODE_ENV === 'production' ? 'none' : 'strict',
                 secure: NODE_ENV === 'production',
-                maxAge: 60 * 60 * 24 * 7 * 1000, 
+                maxAge: 60 * 60 * 24 * 7 * 1000, // 7 days
                 path: '/'
             }
 

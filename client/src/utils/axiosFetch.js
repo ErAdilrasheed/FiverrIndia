@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosFetch = axios.create({
-    baseURL: "http://localhost:8800/api/",
+    baseURL: 'https://fiverrindia.onrender.com/api/',
     withCredentials: true
 });
 
