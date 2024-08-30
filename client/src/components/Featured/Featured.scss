@@ -1,5 +1,5 @@
 .featured {
-    height: 600px;
+    height: 500px;
     display: flex;
     align-items: center;
     color: #fff;
@@ -122,17 +122,19 @@
         }
 
         .right {
-            height: 100%;
             img {
-              height: 100%;
-              object-fit: contain;
-              @media screen and (max-width: 900px) {
-                display: none;
-            }
-            }
-          }
+                width: 100%;
+                position: absolute;
+                width: 100%;
+                z-index: -1;
+                top: 80px;
+                right: 0;
 
-        
+                @media screen and (max-width: 900px) {
+                    display: none;
+                }
+            }
+        }
     }
 
     @media screen and (max-width: 900px) {
