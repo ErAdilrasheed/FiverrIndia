@@ -122,19 +122,17 @@
         }
 
         .right {
+            height: 100%;
             img {
-                width: 100%;
-                position: absolute;
-                width: 100%;
-                z-index: -1;
-                top: 80px;
-                right: 0;
-
-                @media screen and (max-width: 900px) {
-                    display: none;
-                }
+              height: 100%;
+              object-fit: contain;
+              @media screen and (max-width: 900px) {
+                display: none;
             }
-        }
+            }
+          }
+
+        
     }
 
     @media screen and (max-width: 900px) {
