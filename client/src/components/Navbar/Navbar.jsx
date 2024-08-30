@@ -103,8 +103,9 @@ const Navbar = () => {
         <div className="logo">
           <Link to="/" className="link">
             <span className="text">fiverr</span>
+          
+          <span className="dot"> India</span>
           </Link>
-          <span className="dot">.</span>
         </div>
 
         <div className="links">
