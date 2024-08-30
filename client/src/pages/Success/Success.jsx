@@ -17,8 +17,8 @@ const Success = () => {
       try {
         await axiosFetch.patch("/orders", { payment_intent });
         setTimeout(() => {
-          navigate("https://fiverrindia.tech/orders");
-        }, 10000);
+          navigate("/orders");
+        }, 5000);
       } catch ({ response }) {
         console.log(response.data.message);
       }
