@@ -74,7 +74,7 @@ const Home = () => {
             <button>Explore Fiverr Business</button>
           </div>
           <div className="item">
-            <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_870,dpr_1.0/v1/attachments/generic_asset/asset/d9c17ceebda44764b591a8074a898e63-1599597624757/business-desktop-870-x1.png" alt="" />
+            <img src="https://res.cloudinary.com/dr5kn8993/image/upload/v1713201577/My%20Images/prhedprxitjdnkvqvh3h.png" alt="" />
           </div>
         </div>
       </div>
