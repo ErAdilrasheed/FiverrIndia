@@ -82,9 +82,9 @@ export const cards = [
     {
       id: 1,
       img: "https://images.pexels.com/photos/1462935/pexels-photo-1462935.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      pp: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      pp: "https://res.cloudinary.com/dr5kn8993/image/upload/v1713203316/My%20Images/ixmhc0ehirvmkbr99fme.jpg",
       cat: "Web and Mobile Design",
-      username: "Anna Bell",
+      username: "Shikha Jaiswal",
     },
     {
       id: 2,
