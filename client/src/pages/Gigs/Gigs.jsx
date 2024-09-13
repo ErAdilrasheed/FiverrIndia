@@ -73,14 +73,15 @@ const Gigs = () => {
           </div>
         </div>
         <div className="cards">
-          {
-            isLoading
-              ? <div className='loader'> <Loader size={45} /> </div>
-              : error
-                ? 'Something went wrong!'
-                : data.map((gig) => <GigCard key={gig._id} data={gig} />)
-          }
-        </div>
+                    {isLoading
+                        ? <div className="loader"></div>
+                        : error
+                            ? <h4 style={{color:"green"}}>Something Gone Wrong</h4>
+                            : data.length === 0 ?
+                                <h4 style={{color:"#d9480f"}}>Sorry!😒No Gig Found</h4> :
+                                data.map((gig) => <GigCard key={gig._id} item={gig} />)
+                    }
+                </div>
       </div>
     </div>
   )
