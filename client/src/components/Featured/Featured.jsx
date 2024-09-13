@@ -27,10 +27,10 @@ const Featured = () => {
           </div>
           <div className="popular">
             <span>Popular:</span>
-            <button>Website Design</button>
-            <button>WordPress</button>
-            <button>Logo Design</button>
-            <button>AI Services</button>
+            <button onClick={e=>navigate(`gigs?search=${e.target.innerHTML}`)}>Web Design</button>
+              <button onClick={e=>navigate(`gigs?search=${e.target.innerHTML}`)}>WordPress</button>
+              <button onClick={e=>navigate(`gigs?search=${e.target.innerHTML}`)}>Logo Design</button>
+              <button onClick={e=>navigate(`gigs?search=${e.target.innerHTML}`)}>AI Services</button>
           </div>
         </div>
 
